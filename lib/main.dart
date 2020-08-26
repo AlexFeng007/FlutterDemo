@@ -1,6 +1,11 @@
+import 'package:alexflutter/FlexPage.dart';
 import 'package:flutter/material.dart';
 import 'PageSecond.dart';
 import 'DetailPage.dart';
+import 'ButtonPage.dart';
+import 'ContainerPage.dart';
+import 'LayoutPage.dart';
+import 'FlexPage.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,6 +20,10 @@ class MyApp extends StatelessWidget {
         "ListPage": (context) => ListPage(),
         "SecondPage": (context) => PageSecond(),
         "DetailPage": (context) => DetailPage(),
+        "ButtonPage": (context) => ButtonPage(),
+        "ContainerPage": (context) => ContainerPage(),
+        "LayoutPage": (context) => LayoutPage(),
+        "FlexPage": (context) => FlexPage(),
       },
       home: MyHomePage(),
     );
@@ -57,7 +66,37 @@ class MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.pushNamed(context, "SecondPage");
               },
-            )
+            ),
+            RaisedButton(
+              child: Text('ButtonPage'),
+              color: Colors.blue,
+              onPressed: () {
+                Navigator.pushNamed(context, "ButtonPage");
+              },
+            ),
+            RaisedButton(
+              child: Text("ContainerPage"),
+              onPressed: () {
+                Navigator.pushNamed(context, "ContainerPage");
+              },
+            ),
+            RaisedButton(
+              child: Text("ImagePage"),
+              onPressed: () {
+                Navigator.pushNamed(context, "ImagePage");
+              },
+            ),
+            RaisedButton(
+              child: Text("LayoutPage"),
+              onPressed: () {
+                Navigator.pushNamed(context, "LayoutPage");
+              },
+            ),
+            RaisedButton(
+                child: Text("FlexPage"),
+                onPressed: () {
+                  Navigator.pushNamed(context, "FlexPage");
+                }),
           ],
         ),
       ),

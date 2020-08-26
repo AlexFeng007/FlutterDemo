@@ -8,7 +8,14 @@ class PageSecond extends StatelessWidget {
         title: Text('this Page2'),
       ),
       body: Center(
-        child: Text("hello world"),
+        child: Text(
+          "hello world",
+          style: TextStyle(
+            fontSize: 50,
+            fontWeight: FontWeight.bold,
+            color: Color(0xFF0000ff),
+          ),
+        ),
       ),
     );
   }
