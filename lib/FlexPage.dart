@@ -7,27 +7,28 @@ class FlexPage extends StatelessWidget {
       appBar: AppBar(
         title: Text("FlexPage"),
       ),
-      body: Flex(
-        direction: Axis.horizontal,
+      body: Column(
         children: <Widget>[
-          Container(
-            width: 30,
-            height: 100,
-            color: Colors.blue,
+          Expanded(
+            child: Container(
+              color: Colors.red,
+              padding: EdgeInsets.all(5.0),
+            ),
+            flex: 1,
           ),
           Expanded(
-            flex: 1,
             child: Container(
-              height: 100.0,
-              color: Colors.red,
+              color: Colors.purple,
+              padding: EdgeInsets.all(5),
+            ),
+            flex: 2,
+          ),
+          Expanded(
+            child: Container(
+              color: Colors.yellow,
+              padding: EdgeInsets.all(5.0),
             ),
           ),
-          Expanded(
-              flex: 1,
-              child: Container(
-                height: 100,
-                color: Colors.green,
-              )),
         ],
       ),
     );

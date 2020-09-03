@@ -9,14 +9,17 @@ class ContainerPage extends StatelessWidget {
       ),
       body: Center(
         child: Container(
-          color: Colors.blue,
-          padding: EdgeInsets.all(10),
-          margin: EdgeInsets.only(left: 130, top: 0, right: 0, bottom: 0),
-          child: Text(
-            "Hello container",
-            style: TextStyle(fontSize: 20, color: Colors.white),
-          ),
-          transform: Matrix4.rotationZ(0.5),
+          child: Text('Hello，Flutter Container'),
+          padding: const EdgeInsets.all(8),
+          alignment: Alignment.center,
+          transform: Matrix4.rotationZ(0.3),
+          decoration: BoxDecoration(
+              border: Border.all(color: Colors.red, width: 5.0),
+              color: Colors.grey,
+              image: DecorationImage(
+                  image: AssetImage('images/fengbo.jpeg'), fit: BoxFit.cover)),
+          width: 200,
+          height: 200,
         ),
       ),
     );

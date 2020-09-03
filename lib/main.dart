@@ -6,6 +6,12 @@ import 'ButtonPage.dart';
 import 'ContainerPage.dart';
 import 'LayoutPage.dart';
 import 'FlexPage.dart';
+import 'TableViewCellPage.dart';
+import 'TestingView.dart';
+import 'SafeAreaPage.dart';
+import 'package:alexflutter/MyTabBarPageView.dart';
+import 'WrapPage.dart';
+import 'StackPage.dart';
 
 void main() {
   runApp(MyApp());
@@ -24,6 +30,12 @@ class MyApp extends StatelessWidget {
         "ContainerPage": (context) => ContainerPage(),
         "LayoutPage": (context) => LayoutPage(),
         "FlexPage": (context) => FlexPage(),
+        "TableViewCellPage": (context) => TableViewCellPage(),
+        "TestingView": (context) => TestingView(),
+        "SafeAreaPage": (context) => SafeAreaPage(),
+        "TabBarController": (context) => MyTabBarPageView(),
+        "WrapPageController": (context) => WrapPage(),
+        "StackPage": (context) => StackPage(),
       },
       home: MyHomePage(),
     );
@@ -44,60 +56,96 @@ class MyHomePageState extends State<MyHomePage> {
         title: Text("我是title"),
       ),
       body: Center(
-        child: Column(
-          children: <Widget>[
-            Text(msg),
-            FlatButton(
-              color: Colors.blue,
-              textColor: Colors.white,
-              //点击按钮,修改msg的文字
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return ListPage();
-                }));
-              },
-              child: Text(
-                "Click me",
-                style: TextStyle(fontSize: 20.0),
-              ),
-            ),
-            RaisedButton(
-              child: Text("Click to Page2"),
-              onPressed: () {
-                Navigator.pushNamed(context, "SecondPage");
-              },
-            ),
-            RaisedButton(
-              child: Text('ButtonPage'),
-              color: Colors.blue,
-              onPressed: () {
-                Navigator.pushNamed(context, "ButtonPage");
-              },
-            ),
-            RaisedButton(
-              child: Text("ContainerPage"),
-              onPressed: () {
-                Navigator.pushNamed(context, "ContainerPage");
-              },
-            ),
-            RaisedButton(
-              child: Text("ImagePage"),
-              onPressed: () {
-                Navigator.pushNamed(context, "ImagePage");
-              },
-            ),
-            RaisedButton(
-              child: Text("LayoutPage"),
-              onPressed: () {
-                Navigator.pushNamed(context, "LayoutPage");
-              },
-            ),
-            RaisedButton(
-                child: Text("FlexPage"),
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              Text(msg),
+              FlatButton(
+                color: Colors.blue,
+                textColor: Colors.white,
+                //点击按钮,修改msg的文字
                 onPressed: () {
-                  Navigator.pushNamed(context, "FlexPage");
-                }),
-          ],
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return ListPage();
+                  }));
+                },
+                child: Text(
+                  "Click me",
+                  style: TextStyle(fontSize: 20.0),
+                ),
+              ),
+              RaisedButton(
+                child: Text("Click to Page2"),
+                onPressed: () {
+                  Navigator.pushNamed(context, "SecondPage");
+                },
+              ),
+              RaisedButton(
+                child: Text('ButtonPage'),
+                color: Colors.blue,
+                onPressed: () {
+                  Navigator.pushNamed(context, "ButtonPage");
+                },
+              ),
+              RaisedButton(
+                child: Text("ContainerPage"),
+                onPressed: () {
+                  Navigator.pushNamed(context, "ContainerPage");
+                },
+              ),
+              RaisedButton(
+                child: Text("ImagePage"),
+                onPressed: () {
+                  Navigator.pushNamed(context, "ImagePage");
+                },
+              ),
+              RaisedButton(
+                child: Text("LayoutPage"),
+                onPressed: () {
+                  Navigator.pushNamed(context, "LayoutPage");
+                },
+              ),
+              RaisedButton(
+                  child: Text("FlexPage"),
+                  onPressed: () {
+                    Navigator.pushNamed(context, "FlexPage");
+                  }),
+              RaisedButton(
+                child: Text("TableViewCellPage"),
+                onPressed: () {
+                  Navigator.pushNamed(context, "TableViewCellPage");
+                },
+              ),
+              RaisedButton(
+                child: Text("TestViews"),
+                onPressed: () {
+                  Navigator.pushNamed(context, "TestingView");
+                },
+              ),
+              RaisedButton(
+                child: Text("safeAreaViews"),
+                onPressed: () {
+                  Navigator.pushNamed(context, "SafeAreaPage");
+                },
+              ),
+              RaisedButton(
+                  child: Text("TabbarController"),
+                  onPressed: () {
+                    Navigator.pushNamed(context, "TabBarController");
+                  }),
+              RaisedButton(
+                  child: Text("WrapPage"),
+                  onPressed: () {
+                    Navigator.pushNamed(context, "WrapPageController");
+                  }),
+              RaisedButton(
+                child: Text('StackPage'),
+                onPressed: () {
+                  Navigator.pushNamed(context, "StackPage");
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
