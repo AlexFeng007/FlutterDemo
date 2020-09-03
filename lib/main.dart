@@ -12,6 +12,7 @@ import 'SafeAreaPage.dart';
 import 'package:alexflutter/MyTabBarPageView.dart';
 import 'WrapPage.dart';
 import 'StackPage.dart';
+import 'package:alexflutter/AnimationPage.dart';
 
 void main() {
   runApp(MyApp());
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
         "TabBarController": (context) => MyTabBarPageView(),
         "WrapPageController": (context) => WrapPage(),
         "StackPage": (context) => StackPage(),
+        "AnimationPage": (context) => AnimationPage(),
       },
       home: MyHomePage(),
     );
@@ -144,6 +146,12 @@ class MyHomePageState extends State<MyHomePage> {
                   Navigator.pushNamed(context, "StackPage");
                 },
               ),
+              RaisedButton(
+                child: Text("animationPage"),
+                onPressed: () {
+                  Navigator.pushNamed(context, "AnimationPage");
+                },
+              )
             ],
           ),
         ),
