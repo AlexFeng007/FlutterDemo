@@ -13,9 +13,21 @@ import 'package:alexflutter/MyTabBarPageView.dart';
 import 'WrapPage.dart';
 import 'StackPage.dart';
 import 'package:alexflutter/AnimationPage.dart';
+import 'package:alexflutter/PageViewPage.dart';
+import 'package:provider/provider.dart';
+import 'ProviderPage.dart';
+import 'package:alexflutter/Counter.dart';
+
 
 void main() {
-  runApp(MyApp());
+  runApp(
+      MultiProvider(
+        providers: [
+          ChangeNotifierProvider.value(value: new Counter(4)),
+        ],
+        child: MyApp(),
+      ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -38,6 +50,8 @@ class MyApp extends StatelessWidget {
         "WrapPageController": (context) => WrapPage(),
         "StackPage": (context) => StackPage(),
         "AnimationPage": (context) => AnimationPage(),
+        "PageViewPage": (context) => PageViewPage(),
+        "ProviderPage": (context) => ProviderPage(),
       },
       home: MyHomePage(),
     );
@@ -51,6 +65,7 @@ class MyHomePage extends StatefulWidget {
 
 class MyHomePageState extends State<MyHomePage> {
   var msg = "hello world";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -151,7 +166,18 @@ class MyHomePageState extends State<MyHomePage> {
                 onPressed: () {
                   Navigator.pushNamed(context, "AnimationPage");
                 },
-              )
+              ),
+              RaisedButton(
+                  child: Text("PageViewPage"),
+                  onPressed: () {
+                    Navigator.pushNamed(context, "PageViewPage");
+                  }),
+              RaisedButton(
+                child: Text("ProviderPage"),
+                onPressed: () {
+                  Navigator.pushNamed(context, "ProviderPage");
+                },
+              ),
             ],
           ),
         ),
@@ -203,3 +229,4 @@ class ListPage extends StatelessWidget {
     );
   }
 }
+
