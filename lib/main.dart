@@ -17,6 +17,7 @@ import 'package:alexflutter/PageViewPage.dart';
 import 'package:provider/provider.dart';
 import 'ProviderPage.dart';
 import 'package:alexflutter/Counter.dart';
+import 'package:alexflutter/EventBusPage.dart';
 
 
 void main() {
@@ -52,6 +53,7 @@ class MyApp extends StatelessWidget {
         "AnimationPage": (context) => AnimationPage(),
         "PageViewPage": (context) => PageViewPage(),
         "ProviderPage": (context) => ProviderPage(),
+        "EventBusPage": (context) => EventBusPage(),
       },
       home: MyHomePage(),
     );
@@ -65,9 +67,10 @@ class MyHomePage extends StatefulWidget {
 
 class MyHomePageState extends State<MyHomePage> {
   var msg = "hello world";
-
   @override
   Widget build(BuildContext context) {
+
+
     return Scaffold(
       appBar: AppBar(
         title: Text("我是title"),
@@ -176,6 +179,12 @@ class MyHomePageState extends State<MyHomePage> {
                 child: Text("ProviderPage"),
                 onPressed: () {
                   Navigator.pushNamed(context, "ProviderPage");
+                },
+              ),
+              RaisedButton(
+                child: Text("EventBusPage"),
+                onPressed:() {
+                  Navigator.pushNamed(context, "EventBusPage");
                 },
               ),
             ],
