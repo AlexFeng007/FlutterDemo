@@ -18,16 +18,19 @@ import 'package:provider/provider.dart';
 import 'ProviderPage.dart';
 import 'package:alexflutter/Counter.dart';
 import 'package:alexflutter/EventBusPage.dart';
-
+import 'SharePreferencePage.dart';
+import 'SynchronizedPage.dart';
+import 'TextEditorPage.dart';
+import 'NotFoundPage.dart';
 
 void main() {
   runApp(
-      MultiProvider(
-        providers: [
-          ChangeNotifierProvider.value(value: new Counter(4)),
-        ],
-        child: MyApp(),
-      ),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider.value(value: new Counter(4)),
+      ],
+      child: MyApp(),
+    ),
   );
 }
 
@@ -54,8 +57,20 @@ class MyApp extends StatelessWidget {
         "PageViewPage": (context) => PageViewPage(),
         "ProviderPage": (context) => ProviderPage(),
         "EventBusPage": (context) => EventBusPage(),
+        "sharePreference": (context) => SharePreferencePage(),
+        "SynchronizedPage": (context) => SynchronizedPage(),
+        "TextEditorPage": (context) => TextEditorPage(),
+      },
+      onUnknownRoute: (RouteSettings setting) {
+        String name = setting.name;
+        return MaterialPageRoute(builder: (context) {
+          return NotFoundPage();
+        });
       },
       home: MyHomePage(),
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
     );
   }
 }
@@ -67,10 +82,9 @@ class MyHomePage extends StatefulWidget {
 
 class MyHomePageState extends State<MyHomePage> {
   var msg = "hello world";
+
   @override
   Widget build(BuildContext context) {
-
-
     return Scaffold(
       appBar: AppBar(
         title: Text("我是title"),
@@ -183,8 +197,49 @@ class MyHomePageState extends State<MyHomePage> {
               ),
               RaisedButton(
                 child: Text("EventBusPage"),
-                onPressed:() {
+                onPressed: () {
                   Navigator.pushNamed(context, "EventBusPage");
+                },
+              ),
+              RaisedButton(
+                child: Text("sharePreference"),
+                onPressed: () {
+                  Navigator.pushNamed(context, "sharePreference");
+                },
+              ),
+              RaisedButton(
+                child: Text("SynchronizedPage"),
+                onPressed: () {
+                  Navigator.pushNamed(context, "SynchronizedPage");
+                },
+              ),
+              RaisedButton(
+                child: Text("TextEditorPage"),
+                onPressed: () {
+                  Navigator.pushNamed(context, "TextEditorPage");
+                },
+              ),
+              RaisedButton(
+                child: Text("NotFoundPage"),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      PageRouteBuilder(
+                          opaque: false,
+                          pageBuilder: (BuildContext context, _, __) {
+                            return new NotFoundPage();
+                          },
+                          transitionsBuilder: (___, Animation<double> animation,
+                              ____, Widget child) {
+                            return FadeTransition(
+                              opacity: animation,
+                              child: RotationTransition(
+                                turns: Tween<double>(begin: 0.5, end: 1.0)
+                                    .animate(animation),
+                                child: child,
+                              ),
+                            );
+                          }));
                 },
               ),
             ],
@@ -238,4 +293,3 @@ class ListPage extends StatelessWidget {
     );
   }
 }
-
