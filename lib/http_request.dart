@@ -1,13 +1,14 @@
 import 'package:dio/dio.dart';
 
-class FBHttpRequest {
+// ignore: camel_case_types
+class http_request {
   static final Dio dio = Dio();
 
   static Future<T> request<T>(
-    String url, {
-    String method = "get",
-    Map<String, dynamic> params,
-  }) async {
+      String url, {
+        String method = "get",
+        Map<String, dynamic> params,
+      }) async {
     //1: 创建单独配置
     final options = Options(method: method);
 

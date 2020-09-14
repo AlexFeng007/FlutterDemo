@@ -2,10 +2,16 @@ PODS:
   - Flutter (1.0.0)
   - shared_preferences (0.0.1):
     - Flutter
+  - ZegoExpressEngine/Video (1.15.0)
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
   - shared_preferences (from `.symlinks/plugins/shared_preferences/ios`)
+  - ZegoExpressEngine/Video
+
+SPEC REPOS:
+  trunk:
+    - ZegoExpressEngine
 
 EXTERNAL SOURCES:
   Flutter:
@@ -16,7 +22,8 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
   shared_preferences: af6bfa751691cdc24be3045c43ec037377ada40d
+  ZegoExpressEngine: e5974c94b2937a48a999810e040f98ca5d3f6dab
 
-PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+PODFILE CHECKSUM: d1819d582529a0a2ba00abb5c4cf55f73f5fa1b8
 
-COCOAPODS: 1.10.0.beta.2
+COCOAPODS: 1.9.3

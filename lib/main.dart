@@ -22,6 +22,10 @@ import 'SharePreferencePage.dart';
 import 'SynchronizedPage.dart';
 import 'TextEditorPage.dart';
 import 'NotFoundPage.dart';
+import 'http_request.dart';
+import 'request_page.dart';
+import 'material_learning_page.dart';
+import 'package:alexflutter/live_page.dart';
 
 void main() {
   runApp(
@@ -60,6 +64,9 @@ class MyApp extends StatelessWidget {
         "sharePreference": (context) => SharePreferencePage(),
         "SynchronizedPage": (context) => SynchronizedPage(),
         "TextEditorPage": (context) => TextEditorPage(),
+        "RequestPage":(context) => request_page(),
+        "material_learning_page":(context) => material_page(),
+        "live_page":(context) => live_page(),
       },
       onUnknownRoute: (RouteSettings setting) {
         String name = setting.name;
@@ -240,6 +247,24 @@ class MyHomePageState extends State<MyHomePage> {
                               ),
                             );
                           }));
+                },
+              ),
+              RaisedButton(
+                child: Text("RequestPage"),
+                onPressed: () {
+                    Navigator.pushNamed(context, "RequestPage");
+                },
+              ),
+              RaisedButton(
+                child: Text("material_learning_page"),
+                onPressed: () {
+                  Navigator.pushNamed(context, "material_learning_page");
+                },
+              ),
+              RaisedButton(
+                child: Text("live_page"),
+                onPressed: () {
+                  Navigator.pushNamed(context, "live_page");
                 },
               ),
             ],

@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'FBHttpRequest.dart';
+import 'http_request.dart';
 
-class RequestPage extends StatefulWidget {
+// ignore: camel_case_types
+class request_page extends StatefulWidget {
   @override
-  _RequestPageState createState() => _RequestPageState();
+  _request_pageState createState() => _request_pageState();
 }
 
-class _RequestPageState extends State<RequestPage> {
+// ignore: camel_case_types
+class _request_pageState extends State<request_page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +25,7 @@ class _RequestPageState extends State<RequestPage> {
           child: RaisedButton(
             child: Text("Request"),
             onPressed: () {
-              requestData(0);
+              _requestData(0);
             },
           ),
         ),
@@ -31,11 +33,9 @@ class _RequestPageState extends State<RequestPage> {
     );
   }
 
-
-  requestData(int pageIndex) async {
-      final requestUrl = "http://www.baidu.com";
-      final result = await FBHttpRequest.request(requestUrl);
-      print("result is $result");
+  _requestData(int pageIndex) async {
+    final requestUrl = "http://www.baidu.com";
+    final result = await http_request.request(requestUrl);
+    print("result is $result");
   }
-
 }
