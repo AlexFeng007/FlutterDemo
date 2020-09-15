@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:alexflutter/init_sdk_page.dart';
 
 class live_page extends StatefulWidget {
   @override
@@ -15,34 +16,39 @@ class _live_pageState extends State<live_page> {
         backgroundColor: Colors.black,
       ),
       body: SafeArea(
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 10.0),
-                ),
-                CupertinoButton(
-                  color: Color(0xff0e88eb),
-                  child: Text('Publish Stream'),
-                  onPressed: () {
-
-                  },
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 10.0),
-                ),
-                CupertinoButton(
-                  color: Color(0xff0e88eb),
-                  child: Text('Play Stream'),
-                  onPressed: () {
-
-                  },
-                ),
-
-              ],
-            ),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(bottom: 10.0),
+              ),
+              CupertinoButton(
+                color: Color(0xff0e88eb),
+                child: Text('Publish Stream'),
+                onPressed: () {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (BuildContext context) {
+                    return InitPage(true);
+                  }));
+                },
+              ),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 10.0),
+              ),
+              CupertinoButton(
+                color: Color(0xff0e88eb),
+                child: Text('Pull Stream'),
+                onPressed: () {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (BuildContext context) {
+                    return InitPage(false);
+                  }));
+                },
+              ),
+            ],
           ),
+        ),
       ),
     );
   }
