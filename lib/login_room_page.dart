@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
 import 'package:zego_express_engine/zego_express_engine.dart';
+import 'package:alexflutter/zego_config.dart';
+import 'zego_permission.dart';
 
-//import 'package:zego_permission/zego_permission.dart';
-//import 'package:zego_express_engine_example/config/zego_config.dart';
-//import 'package:zego_express_engine_example/pages/publish_stream_page.dart';
-//import 'package:zego_express_engine_example/pages/play_stream_page.dart';
+import 'publish_stream_page.dart';
+import 'play_stream_page.dart';
 
 
 class Authorization {
@@ -80,8 +80,6 @@ class _LoginRoomPageState extends State<LoginRoomPage> {
       // Playing stream does not need to apply for permission
       _loginRoom();
     }
-
-
   }
 
   void _loginRoom() {
@@ -251,6 +249,5 @@ class _LoginRoomPageState extends State<LoginRoomPage> {
       ),
     );
   }
-
 }
 

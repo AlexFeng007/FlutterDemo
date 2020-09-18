@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:zego_express_engine/zego_express_engine.dart';
 import 'package:alexflutter/zego_config.dart';
 import 'package:alexflutter/ZegoUITool.dart';
-//import 'package:zego_express_engine_example/pages/login_room_page.dart';
+import 'package:alexflutter/login_room_page.dart';
 
 class InitPage extends StatefulWidget {
   final bool isPublish;
@@ -70,9 +70,9 @@ class _InitPageState extends State<InitPage> {
     ZegoConfig.instance.appSign = appSign;
     ZegoConfig.instance.saveConfig();
 
-//    Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) {
-//      //return LoginRoomPage(widget.isPublish);
-//    }));
+    Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) {
+      return LoginRoomPage(widget.isPublish);
+    }));
   }
 
   @override
