@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */; };
+		18C844DE25184FE100F3598A /* PlatformTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C844DD25184FE100F3598A /* PlatformTextView.swift */; };
+		18C844E0251850CC00F3598A /* PlatformTextViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C844DF251850CC00F3598A /* PlatformTextViewFactory.swift */; };
 		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
 		74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74858FAE1ED2DC5600515810 /* AppDelegate.swift */; };
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
@@ -21,6 +23,8 @@
 		1498D2321E8E86230040F4C2 /* GeneratedPluginRegistrant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneratedPluginRegistrant.h; sourceTree = "<group>"; };
 		1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneratedPluginRegistrant.m; sourceTree = "<group>"; };
 		184DD9F5250B7FFE006928D5 /* ZegoExpressEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZegoExpressEngine.framework; path = Pods/ZegoExpressEngine/Video/iOS/ZegoExpressEngine.framework; sourceTree = "<group>"; };
+		18C844DD25184FE100F3598A /* PlatformTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformTextView.swift; sourceTree = "<group>"; };
+		18C844DF251850CC00F3598A /* PlatformTextViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformTextViewFactory.swift; sourceTree = "<group>"; };
 		2246E0463843ECD577C1CAA7 /* Pods-Runner.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.profile.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig"; sourceTree = "<group>"; };
 		3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AppFrameworkInfo.plist; path = Flutter/AppFrameworkInfo.plist; sourceTree = "<group>"; };
 		4E2C1C4E0E631088F247DDFD /* Pods_Runner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Runner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +103,8 @@
 				1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */,
 				74858FAE1ED2DC5600515810 /* AppDelegate.swift */,
 				74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */,
+				18C844DD25184FE100F3598A /* PlatformTextView.swift */,
+				18C844DF251850CC00F3598A /* PlatformTextViewFactory.swift */,
 			);
 			path = Runner;
 			sourceTree = "<group>";
@@ -259,6 +265,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18C844DE25184FE100F3598A /* PlatformTextView.swift in Sources */,
+				18C844E0251850CC00F3598A /* PlatformTextViewFactory.swift in Sources */,
 				74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */,
 				1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */,
 			);
