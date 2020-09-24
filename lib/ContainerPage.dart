@@ -7,6 +7,7 @@ class ContainerPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Hello,Container'),
       ),
+
       body: Center(
         child: Container(
           child: Text('Hello，Flutter Container'),

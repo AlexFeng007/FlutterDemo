@@ -69,6 +69,7 @@ flutter:
     - images/lv/30.png
     - images/lv/50.png
     - images/lv/80.png
+    - images/avatar_head.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

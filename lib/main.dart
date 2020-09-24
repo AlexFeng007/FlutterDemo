@@ -28,6 +28,8 @@ import 'material_learning_page.dart';
 import 'package:alexflutter/live_page.dart';
 import 'danmu_view_page.dart';
 import 'package:alexflutter/ios_plat_form_view.dart';
+import 'live_end_page.dart';
+import 'Painter_page.dart';
 
 void main() {
   runApp(
@@ -71,6 +73,8 @@ class MyApp extends StatelessWidget {
         "live_page":(context) => live_page(),
         "danmu_view_page":(context) => danmu_view_page(),
         "ios_plat_form_view":(context) => plat_form_view(),
+        "live_end_page":(context) => live_end_page(),
+        "Painter_page":(context) => Cake(),
       },
       onUnknownRoute: (RouteSettings setting) {
         String name = setting.name;
@@ -105,6 +109,12 @@ class MyHomePageState extends State<MyHomePage> {
           child: Column(
             children: <Widget>[
               Text(msg),
+              RaisedButton(
+                child: Text("live_end_page"),
+                onPressed: () {
+                  Navigator.pushNamed(context, "live_end_page");
+                },
+              ),
               FlatButton(
                 color: Colors.blue,
                 textColor: Colors.white,
@@ -281,6 +291,12 @@ class MyHomePageState extends State<MyHomePage> {
                 child: Text("ios_plat_form_view"),
                 onPressed: () {
                   Navigator.pushNamed(context, "ios_plat_form_view");
+                },
+              ),
+              RaisedButton(
+                child: Text("Painter_page"),
+                onPressed: () {
+                  Navigator.pushNamed(context, "Painter_page");
                 },
               ),
             ],
