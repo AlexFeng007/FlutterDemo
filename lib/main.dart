@@ -30,6 +30,7 @@ import 'danmu_view_page.dart';
 import 'package:alexflutter/ios_plat_form_view.dart';
 import 'live_end_page.dart';
 import 'Painter_page.dart';
+import 'portrait_danmu_page.dart';
 
 void main() {
   runApp(
@@ -75,6 +76,7 @@ class MyApp extends StatelessWidget {
         "ios_plat_form_view":(context) => plat_form_view(),
         "live_end_page":(context) => live_end_page(),
         "Painter_page":(context) => Cake(),
+        "portrait_danmu_page":(context) => portrait_danmu_page(),
       },
       onUnknownRoute: (RouteSettings setting) {
         String name = setting.name;
@@ -297,6 +299,12 @@ class MyHomePageState extends State<MyHomePage> {
                 child: Text("Painter_page"),
                 onPressed: () {
                   Navigator.pushNamed(context, "Painter_page");
+                },
+              ),
+              RaisedButton(
+                child: Text("portrait_danmu_page"),
+                onPressed: () {
+                  Navigator.pushNamed(context, "portrait_danmu_page");
                 },
               ),
             ],

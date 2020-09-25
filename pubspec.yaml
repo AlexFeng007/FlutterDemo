@@ -44,6 +44,8 @@ dependencies:
   logger: ^0.9.1
   # 网络
   dio: ^3.0.9
+  # 在布局之后调用
+  after_layout: ^1.0.7+2
 
   # 直播
   zego_express_engine: ^1.14.0
