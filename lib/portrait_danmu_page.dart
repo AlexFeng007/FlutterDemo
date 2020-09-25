@@ -26,7 +26,10 @@ class _portrait_danmu_pageState extends State<portrait_danmu_page>
     {'name': '满舒克', 'message': '做我的猫~🐱🐱🐱🐱🐱🐱🐱🐱🐱'},
     {'name': '迪丽热巴', 'message': '我觉得这个主播长得还行叭~，我觉得这个主播长得还行叭～'},
     {'name': '古力娜扎', 'message': '不如本小姐💗'},
-    {'name': '吴彦祖', 'message': '给我吴某人一个面子，你们两个不用争了，论颜值在座各位都是**，你们懂我的意思吧,🎁🎁🎁🎁🎁🎁🎁🎁🎁'},
+    {
+      'name': '吴彦祖',
+      'message': '给我吴某人一个面子，你们两个不用争了，论颜值在座各位都是**，你们懂我的意思吧,🎁🎁🎁🎁🎁🎁🎁🎁🎁'
+    },
     {'name': '吴亦凡', 'message': '？？？'},
     {'name': '满舒克', 'message': '做我的猫~🐱🐱🐱🐱🐱🐱🐱🐱🐱🐱🐱🐱🐱🐱🐱🐱🐱🐱'},
     {'name': '岳云鹏', 'message': '你们这些人好像傻fufu的亚子...'},
@@ -171,34 +174,63 @@ class _portrait_danmu_pageState extends State<portrait_danmu_page>
 
     List<InlineSpan> metalList = [];
     if (this.isHasMetal) {
-      metalList.add(WidgetSpan(
-          child: Image.asset("images/lv/30.png", height: 18)
-      ));
+      metalList
+          .add(WidgetSpan(child: Image.asset("images/lv/30.png", height: 18)));
 
-      metalList.add(WidgetSpan(
-        child: SizedBox(width: 5),
-      ),);
+      metalList.add(
+        WidgetSpan(
+          child: SizedBox(width: 5),
+        ),
+      );
 
-      metalList.add( WidgetSpan(
-          child: Image.asset("images/lv/50.png", height: 18)
-      ),);
+      metalList.add(
+        WidgetSpan(child: Image.asset("images/lv/50.png", height: 18)),
+      );
 
-      metalList.add( WidgetSpan(
-        child: SizedBox(width: 5),
-      ),);
+      metalList.add(
+        WidgetSpan(
+          child: SizedBox(width: 5),
+        ),
+      );
     }
 
-    metalList.add(TextSpan(
-        text: '${name + ' '}:',
-        style: TextStyle(
-          color: Color(0xff3263FF),
-        )),);
+    metalList.add(
+      TextSpan(
+          text: '${name + ' '}:',
+          style: TextStyle(
+            color: Color(0xff3263FF),
+          )),
+    );
 
-    metalList.add(TextSpan(text: message, style: TextStyle(color: Colors.white)),);
+    metalList.add(
+      TextSpan(text: message, style: TextStyle(color: Colors.white)),
+    );
 
     var msgBoard = RichText(
       text: TextSpan(
-        children: metalList,
+        children: [
+
+          WidgetSpan(
+            child: Visibility(
+              visible: true,
+              child: Image.asset("images/lv/50.png", height: 18),
+            ),
+          ),
+
+          WidgetSpan(
+            child: Visibility(
+              visible: true,
+              child: SizedBox(width: 5),
+            ),
+          ),
+
+          TextSpan(
+              text: '${name + ' '}:',
+              style: TextStyle(
+                color: Color(0xff3263FF),
+              )),
+          TextSpan(text: message, style: TextStyle(color: Colors.white)),
+        ],
       ),
     );
     return msgBoard;
