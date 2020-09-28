@@ -31,6 +31,8 @@ import 'package:alexflutter/ios_plat_form_view.dart';
 import 'live_end_page.dart';
 import 'Painter_page.dart';
 import 'portrait_danmu_page.dart';
+import 'screen_boost.dart';
+import 'package:alexflutter/stream_controller_page.dart';
 
 void main() {
   runApp(
@@ -77,6 +79,8 @@ class MyApp extends StatelessWidget {
         "live_end_page":(context) => live_end_page(),
         "Painter_page":(context) => Cake(),
         "portrait_danmu_page":(context) => portrait_danmu_page(),
+        "screen_boost":(context) => Screen_boost_page(),
+        "stream_controller_page":(context) => stream_controller_page(),
       },
       onUnknownRoute: (RouteSettings setting) {
         String name = setting.name;
@@ -305,6 +309,18 @@ class MyHomePageState extends State<MyHomePage> {
                 child: Text("portrait_danmu_page"),
                 onPressed: () {
                   Navigator.pushNamed(context, "portrait_danmu_page");
+                },
+              ),
+              RaisedButton(
+                child: Text("screen_boost"),
+                onPressed: () {
+                  Navigator.pushNamed(context, "screen_boost");
+                },
+              ),
+              RaisedButton(
+                child: Text("stream_controller_page"),
+                onPressed: () {
+                  Navigator.pushNamed(context, "stream_controller_page");
                 },
               ),
             ],
